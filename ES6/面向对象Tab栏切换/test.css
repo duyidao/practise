@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.sectionSee {
+    display: block!important;
+}
+
+input {
+    width: 95%;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    background-color: pink;
+    border-color: #fff;
+}
+
+main {
+    width: 1000px;
+    height: 700px;
+    margin: 50px auto;
+}
+
+main h3 {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    margin: 50px 0;
+    text-align: center;
+    letter-spacing: 30px;
+}
+
+main .tab {
+    width: 100%;
+    height: 550px;
+    border: 2px solid crimson;
+}
+
+main .tab .tabtop {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+main .tab .tabtop ul {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background-color: rgb(253, 198, 198);
+}
+
+main .tab .tabtop ul li {
+    position: relative;
+    width: 80px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 10px;
+    padding: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+main .tab .tabtop ul li span:first-child {
+    display: block;
+    width: 100%;
+    height: 60%;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+main .tab .tabtop ul .licurrent {
+    border-bottom: 3px solid crimson;
+}
+
+main .tab .tabtop ul li .icon {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+    line-height: 7px;
+    font-size: 6px;
+    color: #fff;
+    background-color: crimson;
+}
+
+main .tab .tabtop .tabadd {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    background-color: pink;
+}
+
+main .tab .tabtop .tabadd span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 13px auto;
+    cursor: pointer;
+}
+
+main .tab .tabdown {
+    width: 100%;
+    height: 500px;
+}
+
+main .tab .tabdown section {
+    display: none;
+    width: 90%;
+    height: 90%;
+    margin: 25px 50px;
+}
+
+main .tab .tabdown section input {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: left;
+}
