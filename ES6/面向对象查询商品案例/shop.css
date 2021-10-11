@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.search {
+    margin-top: 20px;
+}
+
+.search input {
+    width: 50px;
+    height: 20px;
+    border: 1px solid #444;
+    outline: none;
+}
+
+.search button {
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: green;
+    color: #fff;
+    margin: 0 0 0 10px;
+}
+
+table {
+    width: 300px;
+    text-align: center;
+    margin: 30px auto;
+    border-collapse: collapse;
+    border: 3px solid #333;
+}
+
+table td {
+    width: 100px;
+    border: 1px solid #555;
+}
