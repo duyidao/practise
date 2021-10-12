@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求学生成绩</title>
+</head>
+
+<body>
+</body>
+<script>
+    let num = prompt('请输入学生总数');
+    let sum = 0;
+    let average = 0;
+    for (let i = 1; i <= num; i++) {
+        let score = prompt('请输入第' + i + '个学生的成绩');
+        sum = sum + parseFloat(score);
+        average = sum / num;
+    }
+    alert('总分为：' + sum + '，平均分为：' + average);
+</script>
+
+</html>
