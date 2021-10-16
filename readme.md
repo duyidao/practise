@@ -14,8 +14,12 @@
 
 - 如果遇到10053错误：
 
+  ```go
+  fatal: unable to access 'https://github.com/duyidao/practise.git/': OpenSSL SSL_read: Connection was aborted, errno 10053
+  ```
+  
   解决方法：
-
+  
   ```go
   //取消http代理
   git config --global --unset http.proxy

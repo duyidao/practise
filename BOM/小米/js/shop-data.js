@@ -1,0 +1,41 @@
+let data = [{
+    shopImg: 'image/手机1.webp',
+    shopName: '小米a',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 1200
+}, {
+    shopImg: 'image/手机2.webp',
+    shopName: '小米b',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 5020
+}, {
+    shopImg: 'image/手机3.webp',
+    shopName: '小米c',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 998
+}, {
+    shopImg: 'image/手机4.webp',
+    shopName: '小米d',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 2000
+}, {
+    shopImg: 'image/手机5.webp',
+    shopName: '小米e',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 1800
+}, {
+    shopImg: 'image/手机6.webp',
+    shopName: '小米f',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 2000
+}, {
+    shopImg: 'image/手机7.webp',
+    shopName: '小米g',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 2000
+}, {
+    shopImg: 'image/手机8.webp',
+    shopName: '小米h',
+    shopIntroduce: '折叠大屏｜自研芯片',
+    price: 2000
+}]

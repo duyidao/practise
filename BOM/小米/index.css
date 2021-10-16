@@ -1,0 +1,734 @@
+/* 声明字体，这里要注意路径问题 */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?5t57fq');
+    src: url('fonts/icomoon.eot?5t57fq#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?5t57fq') format('truetype'), url('fonts/icomoon.woff?5t57fq') format('woff'), url('fonts/icomoon.svg?5t57fq#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 固定导航栏制作 */
+
+.gu {
+    position: fixed;
+    display: none;
+    left: 50%;
+    transform: translateX(600px);
+    bottom: 30%;
+    width: 30px;
+    height: 150px;
+    z-index: 1;
+}
+
+.gu ul li {
+    width: 30px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #ccc;
+}
+
+.gu ul li img {
+    width: 20px;
+    height: 20px;
+}
+
+.gu ul .goTop {
+    display: none;
+}
+
+.gu ul .goTop a {
+    color: orange;
+}
+
+
+/* 头部制作 */
+
+header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: -10px;
+    background-color: #222;
+}
+
+header .w {
+    position: relative;
+}
+
+header .w ul li {
+    float: left;
+}
+
+header .w ul li a {
+    margin-left: 7px;
+    padding-right: 7px;
+    font-size: 10px;
+    color: #999;
+    border-right: 1px solid #999;
+}
+
+header .w ul li a:hover {
+    color: #fff;
+}
+
+header .w ul li:first-child a {
+    margin-left: 0;
+}
+
+header .w ul li:last-child a {
+    border-right: 0;
+}
+
+header .w .deng {
+    position: absolute;
+    right: 150px;
+}
+
+header .w .shopcar {
+    float: right;
+    /* 一开始尝试用绝对定位，结果绝对定位不占位置，背景颜色无法显示 */
+    width: 150px;
+    height: 100%;
+}
+
+header .w .shopcar a {
+    display: block;
+    width: 150px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    background-color: #424242;
+}
+
+header .w .shopcar a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+
+/* 头部导航栏 */
+
+.nav {
+    height: 100px;
+}
+
+.nav .w {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+}
+
+.nav .logo {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: url(image/logo-mi2.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.nav .logo a {
+    display: block;
+    /* 转换为块级元素设置宽高 */
+    width: 60px;
+    height: 66px;
+    /* font-size: 0;文字隐藏——京东的做法 */
+    /* 文字隐藏——淘宝的做法 */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.nav .find {
+    position: absolute;
+    left: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* z-index: 9999; */
+}
+
+.nav .find ul li {
+    float: left;
+    padding-right: 20px;
+}
+
+.nav .find ul li a {
+    color: black;
+}
+
+.nav .find ul li a:hover {
+    color: orange;
+}
+
+.nav .search {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 250px;
+    height: 60px;
+}
+
+.nav .search input {
+    float: left;
+    width: 190px;
+    height: 100%;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    outline: none;
+    /* 点击高亮清除 */
+}
+
+.nav .search button {
+    float: left;
+    width: 60px;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.nav .search button::after {
+    content: "\e906";
+    font-family: 'icomoon';
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.put {
+    position: relative;
+    width: 1200px;
+    height: 180px;
+}
+
+.put ul {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.put ul li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 180px;
+    border-right: 1px solid #ccc;
+}
+
+.put ul li:last-child {
+    border: 0;
+}
+
+.put ul li span {
+    display: block;
+}
+
+.put ul li img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* 导航啦轮播图 */
+
+.b {
+    position: relative;
+    width: 1200px;
+    height: 460px;
+    overflow: hidden;
+    padding: 0;
+    margin-top: -180px;
+}
+
+.b a {
+    color: rgb(255, 255, 255);
+}
+
+.b a:link {
+    text-decoration: none;
+}
+
+.b .lf {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 460px;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+
+.b .lf ul {
+    margin-top: 18px;
+}
+
+.b .lf ul li {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 25px;
+}
+
+.b .lf ul li:hover {
+    background-color: orange;
+}
+
+.b .lf ul li span {
+    position: absolute;
+    right: 20px;
+}
+
+.b .bgImage {
+    width: 1200px;
+    height: 100%;
+}
+
+.b .bgImage ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600%;
+    margin: 0;
+    z-index: 0;
+}
+
+.b .bgImage ul li {
+    float: left;
+    width: 1200px;
+    height: 460px;
+}
+
+.b .bgImage ul li a img {
+    width: 100%;
+    height: 100%;
+}
+
+.b .zuo,
+.b .you {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 120px;
+    text-align: center;
+    line-height: 120px;
+    font-size: 30px;
+    color: #ccc;
+    display: none;
+    z-index: 9999;
+}
+
+.b .zuo {
+    left: 250px;
+}
+
+.b .you {
+    right: 0;
+}
+
+
+/* 下方小圆圈设置 */
+
+.bgImage ol {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 17px;
+}
+
+.bgImage ol li {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 7px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.bgImage ol .current {
+    background-color: #fff;
+}
+
+
+/* 广告 */
+
+.guang {
+    height: 170px;
+    margin-top: 15px;
+}
+
+.guang .zuo {
+    float: left;
+    width: 250px;
+    background: #5f5750;
+}
+
+.guang .zuo ul {
+    margin: 0;
+    padding: 0 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.guang .zuo ul li {
+    position: relative;
+    float: left;
+    width: 80px;
+    height: 85px;
+    padding: 0 5px;
+}
+
+.guang .zuo ul li::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 1px;
+    background-color: #ccc;
+    opacity: .3;
+}
+
+.guang .zuo ul li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 70px;
+    background-color: #ccc;
+    opacity: .3;
+}
+
+.guang .zuo ul li a {
+    display: block;
+    padding: 18px 0 0;
+    color: #fff;
+    opacity: .7;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+}
+
+.guang .zuo ul li:hover a {
+    opacity: 1;
+}
+
+.guang .zuo ul li img {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto 4px;
+    /* 用margin:auto让图片居中显示 */
+}
+
+.guang div[class^=gao] img {
+    float: right;
+    width: 300px;
+    height: 170px;
+    margin-left: 16px;
+}
+
+
+/* 产品 */
+
+nav .marbo {
+    margin-bottom: 20px;
+}
+
+nav .nolf {
+    margin-right: 0;
+}
+
+.shop img {
+    margin: 15px 0;
+    width: 100%;
+}
+
+nav {
+    height: 700px;
+    padding: 50px 0;
+    background-color: rgb(238, 237, 237);
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+nav .clearfix li {
+    position: relative;
+    float: left;
+    width: 230px;
+    height: 290px;
+    background-color: #fff;
+    margin-right: 10px;
+    transition: all .5s;
+}
+
+nav .clearfix li:hover {
+    transform: translateZ(18px);
+    box-shadow: 0 0 15px 10px #ccc;
+}
+
+nav .clearfix li:first-child {
+    height: 600px;
+}
+
+nav .clearfix li:first-child img {
+    position: absolute;
+    /* 用定位进行布局，不然img上方的空隙去除不了 */
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav .clearfix li img {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 156px;
+}
+
+nav .clearfix li em {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-style: normal;
+}
+
+nav .clearfix li span {
+    position: absolute;
+    width: 100%;
+    top: 73%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+nav .clearfix li strong {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(250, 102, 34);
+    font-size: 16px;
+    font-style: normal;
+}
+
+
+/* 底部 */
+
+.on {
+    padding: 27px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.on ul {
+    height: 25px;
+    /* 为ul设置高度，用padding撑大（高度不能继承，别忘了给li设置高） */
+    line-height: 25px;
+    margin: 0;
+    /* margin有默认的下边距，不清除无法垂直居中 */
+}
+
+.on ul li {
+    float: left;
+    width: 20%;
+    height: 25px;
+    text-align: center;
+    font-size: 17px;
+    border-right: 1px solid #444;
+}
+
+.on ul li:last-child {
+    border: 0;
+}
+
+.on ul li a {
+    /* 如果想要点到这一行都能触发a，就为a转为块元素继承宽度； */
+    /* 如果只是想点击文本才能触发a，则不需要 */
+    /* display: block; */
+    color: #444;
+}
+
+.on ul li a:hover {
+    color: rgb(253, 178, 38);
+}
+
+.on ul li a::before {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.under {
+    padding: 30px 0;
+}
+
+.under dl {
+    float: left;
+    margin-right: 95px;
+}
+
+.under dl dt {
+    margin: 0 0 30px;
+}
+
+.under dl dd {
+    margin-bottom: 10px;
+}
+
+.under dl dd a {
+    color: #555;
+    font-size: 13px;
+}
+
+.under dl dd a:hover {
+    color: rgb(245, 142, 24);
+}
+
+.under .col-tant {
+    float: right;
+    width: 252px;
+    height: 110px;
+    text-align: center;
+    margin-top: 30px;
+    border-left: 1px solid #ccc;
+}
+
+.under .col-tant .phone {
+    display: block;
+    height: 22px;
+    font-size: 20px;
+    color: #ff6700;
+    margin-bottom: 5px;
+}
+
+.under .col-tant .rule {
+    font-size: 12px;
+    color: #616161;
+    margin-bottom: 5px;
+}
+
+.under .col-tant .fu {
+    display: block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #ff6700;
+    border: 1px solid #ff6700;
+    margin-bottom: 5px;
+}
+
+.under .col-tant .fu::before {
+    vertical-align: auto;
+    margin-right: 5px;
+}
+
+.under .col-tant .guan {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.under .col-tant .guan a img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer {
+    padding: 30px 0;
+    background-color: #fafafa;
+}
+
+.footer img {
+    float: left;
+    width: 56px;
+    height: 56px;
+}
+
+.footer .info-text {
+    padding: 0 0 0 67px;
+}
+
+.footer .info-text p {
+    font-size: 12px;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+.footer .info-text .sep {
+    margin: 0;
+    color: #757575;
+}
+
+.footer .info-text .sites a {
+    color: #757575;
+}
+
+.footer .info-links {
+    margin: 4px 0 15px;
+    padding: 0 0 0 67px;
+}
+
+.footer .info-links img {
+    width: auto;
+    height: 28px;
+}
+
+.ir {
+    text-align: center;
+    margin-top: 30px;
+}

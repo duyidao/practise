@@ -1,0 +1,157 @@
+/* 声明字体，这里要注意路径问题 */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?5t57fq');
+    src: url('fonts/icomoon.eot?5t57fq#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?5t57fq') format('truetype'), url('fonts/icomoon.woff?5t57fq') format('woff'), url('fonts/icomoon.svg?5t57fq#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 导航啦轮播图 */
+
+.b {
+    position: relative;
+    width: 1200px;
+    height: 460px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.b a {
+    color: rgb(255, 255, 255);
+}
+
+.b a:link {
+    text-decoration: none;
+}
+
+.b .lf {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 460px;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.b .lf ul {
+    margin-top: 18px;
+}
+
+.b .lf ul li {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 25px;
+}
+
+.b .lf ul li:hover {
+    background-color: orange;
+}
+
+.b .lf ul li span {
+    position: absolute;
+    right: 20px;
+}
+
+.b .bgImage {
+    width: 1200px;
+    height: 100%;
+}
+
+.b .bgImage ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600%;
+    margin: 0;
+}
+
+.b .bgImage ul li {
+    float: left;
+    width: 1200px;
+    height: 460px;
+}
+
+.b .bgImage ul li a img {
+    width: 100%;
+    height: 100%;
+}
+
+.b .zuo,
+.b .you {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 120px;
+    text-align: center;
+    line-height: 120px;
+    font-size: 30px;
+    color: #ccc;
+    display: none;
+    z-index: 9999;
+}
+
+.b .zuo {
+    left: 250px;
+}
+
+.b .you {
+    right: 0;
+}
+
+
+/* 下方小圆圈设置 */
+
+.bgImage ol {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 17px;
+}
+
+.bgImage ol li {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 7px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.bgImage ol .current {
+    background-color: #fff;
+}
