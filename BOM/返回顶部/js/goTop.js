@@ -6,6 +6,8 @@ window.addEventListener('load', function() {
     let goTop = document.querySelector('.goTop');
     let shopTop = shop.offsetTop;
     let navTop = nav.offsetTop;
+    window.pageYOffset >= navTop ? gu.style.display = 'block' : gu.style.display = 'none';
+    window.pageYOffset >= shopTop ? goTop.style.display = 'block' : goTop.style.display = 'none';
     document.addEventListener('scroll', function() {
         if (window.pageYOffset >= navTop) {
             gu.style.display = 'block';
