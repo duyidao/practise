@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百叶窗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .box {
+            position: relative;
+            width: 800px;
+            height: 300px;
+            margin: 50px auto;
+            overflow: hidden;
+            border: 1px solid skyblue;
+        }
+        
+        li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 300px;
+        }
+        
+        li:nth-child(2) {
+            left: 160px;
+        }
+        
+        li:nth-child(3) {
+            left: 320px;
+        }
+        
+        li:nth-child(4) {
+            left: 480px;
+        }
+        
+        li:last-child {
+            left: 640px;
+        }
+        
+        .cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <div class="cover"></div>
+                <img src="./img/0.jpg" alt="">
+            </li>
+            <li>
+                <div class="cover"></div>
+                <img src="./img/1.jpg" alt="">
+            </li>
+            <li>
+                <div class="cover"></div>
+                <img src="./img/2.jpg" alt="">
+            </li>
+            <li>
+                <div class="cover"></div>
+                <img src="./img/3.jpg" alt="">
+            </li>
+            <li>
+                <div class="cover"></div>
+                <img src="./img/4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    let lis = $('li');
+    lis.mouseenter(function() {
+        $(this).find('.cover').stop(true).fadeOut();
+    }).mouseleave(function() {
+        $(this).find('.cover').stop(true).fadeIn();
+        lis.eq(1).stop(true).animate({
+            'left': '160'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '320'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '480'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '640'
+        }, 500);
+    });
+
+    lis.eq(0).mouseenter(function() {
+        lis.eq(1).stop(true).animate({
+            'left': '560'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '620'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '680'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '740'
+        }, 500);
+    });
+
+    lis.eq(1).mouseenter(function() {
+        lis.eq(1).stop(true).animate({
+            'left': '100'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '620'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '680'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '740'
+        }, 500);
+    });
+    lis.eq(2).mouseenter(function() {
+        lis.eq(1).stop(true).animate({
+            'left': '60'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '120'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '680'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '740'
+        }, 500);
+    });
+
+    lis.eq(3).mouseenter(function() {
+        lis.eq(1).stop(true).animate({
+            'left': '60'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '120'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '180'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '740'
+        }, 500);
+    });
+
+    lis.eq(4).mouseenter(function() {
+        lis.eq(1).stop(true).animate({
+            'left': '60'
+        }, 500);
+        lis.eq(2).stop(true).animate({
+            'left': '120'
+        }, 500);
+        lis.eq(3).stop(true).animate({
+            'left': '180'
+        }, 500);
+        lis.eq(4).stop(true).animate({
+            'left': '240'
+        }, 500);
+    });
+</script>
+
+</html>

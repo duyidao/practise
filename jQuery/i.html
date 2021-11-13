@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blue {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+        .red {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <button>点我</button>
+    <div class="red"></div>
+    <div class="blue"></div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $('button').click(function() {
+        $('.red').animate({
+                'width': 200,
+                'height': 200,
+                'top': 300
+            }, 1000, 'linear',
+            function() {
+                $(this).css('background-color', 'pink');
+            });
+        $('.blue').animate({
+            'width': 300,
+            'height': 50,
+            'left': 150
+        }, 1000)
+    })
+</script>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入淡出轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        .box {
+            width: 672px;
+            height: 420px;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .imgs {
+            position: relative;
+            width: 672px;
+            height: 420px;
+        }
+        
+        .box .imgs li {
+            position: absolute;
+            display: none;
+            width: 672px;
+            height: 420px;
+        }
+        
+        .box .imgs li.select {
+            display: block;
+        }
+        
+        .box .imgs li img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btns span {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top: 137.5px;
+        }
+        
+        .btns .left {
+            left: 10px;
+            background-image: url("img/slide-btnL.png");
+        }
+        
+        .btns .right {
+            right: 10px;
+            background-image: url("img/slide-btnR.png");
+        }
+        
+        .circles {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .circles li {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .circles li.select {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="imgs">
+            <ul>
+                <li class="select">
+                    <a href="#"><img src="./img/0.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/1.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/2.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/3.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/4.jpg" alt="" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="btns">
+            <span class="left"></span>
+            <span class="right"></span>
+        </div>
+        <div class="circles">
+            <ul>
+                <li class="select"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    let lis = $('.circles li');
+    let imgs = $('.imgs li');
+    let id = 0;
+
+    setInterval(function() {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(id).fadeOut(1500);
+        id++;
+        changeImg(imgs, lis, 'select');
+    }, 1500)
+    lis.click(function() {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(id).fadeOut(1500);
+        id = $(this).index();
+        changeImg(imgs, lis, 'select');
+    });
+    $('.right').click(function() {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(id).fadeOut(1500);
+        id++;
+        changeImg(imgs, lis, 'select');
+    });
+    $('.left').click(function() {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(id).fadeOut(1500);
+        id--;
+        changeImg(imgs, lis, 'select');
+    });
+
+    function changeImg(img, li, className) {
+        if (id > img.length - 1) {
+            id = 0;
+        }
+        if (id < 0) {
+            id = img.length - 1;
+        }
+        img.eq(id).fadeIn(1500);
+        li.removeClass(className);
+        li.eq(id).addClass(className);
+    }
+</script>
+
+</html>
